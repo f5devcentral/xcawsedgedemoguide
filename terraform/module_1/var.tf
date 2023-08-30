@@ -16,7 +16,7 @@ variable "xc_api_p12_file" {
 
 variable "kubeconfig_path" {
   type    = string
-  default = "../kubeconfig_mk8s.conf"
+  default = "../kubeconfig_mk8s.yaml"
 }
 
 variable "app_stack_name" {
