@@ -1,6 +1,6 @@
 #   Deployment instructions
 
-## AWS Cloud credenrials
+## AWS Cloud credentials
 
 Create stack using the cloud formation template for AWS Cloud Credentials.
 
@@ -31,20 +31,20 @@ Check **acknowledge** checkbox and click **Create stack**.
 
 ![](../assets/terraform/aws_stack_next_2.png)
 
-In a few minutes navigate to the **Output** tab and find your **Access Key** and **Access Secret**. Note down that keys.
+In a few minutes navigate to the **Output** tab and find your **Access Key** and **Access Secret**. Note down those keys.
 
 ![](../assets/aterraformws/aws_keys.png)
 
 The Access Key and the Secret Key can be used to create the AWS Programmatic Access Credentials on F5® Distributed Cloud Console. See [AWS Cloud Credentials](https://docs.cloud.f5.com/docs/how-to/site-management/cloud-credentials#aws-programmable-access-credentials) for more information.
 
 
-## XC Cloud credenrials
+## XC Cloud credentials
 
-Sign in to the F5 Distributed Cloud Console and open **Administration** tab.
+Sign in to the F5 Distributed Cloud Console and open the **Administration** tab.
 
 ![](../assets/terraform/administration.png)
 
-Open **Credentials** section and click **Add Credentials**.
+Open the **Credentials** section and click **Add Credentials**.
 
 ![](../assets/terraform/create_credentials.png)
 
@@ -114,11 +114,11 @@ Save the output
     kiosk_password = <sensitive>
     kiosk_user = "administrator"
 
-Connect to the kiosk VM with RDP connection and update DNS Server. Use **kiosk_address** from the output. **administrator** as a login. To retrieve the password followinf command:
+Connect to the kiosk VM with RDP connection and update DNS Server. Use **kiosk_address** from the output. **administrator** as a login. To retrieve the password following command:
 
     terraform output kiosk_password
 
-Open DNS setings and use the DNS server from the output **appstack_private_ip** and any public as a Secondary DNS
+Open DNS settings and use the DNS server from the output **appstack_private_ip** and any public as a Secondary DNS
 
     10.125.10.39
     8.8.8.8
@@ -244,6 +244,6 @@ Apply Terraform script.
 
 ## Clean up
 
-Run the **terraform destroy** command in the each forlder.
+Run the **terraform destroy** command in each folder.
 
     terraform destroy
