@@ -248,7 +248,7 @@ In this Module we are going to deploy BuyTime Retail Kiosk using AppStack create
 
 ## Deploy kiosk
 
-In order to deploy the kiosk by running the following command, we will need the Kubeconfig which we downloaded in the `Get mK8s Kubeconfig`_ section in Pre-requisites. After getting the Kubeconfig, proceed to the CLI and run the following command to deploy the Kiosk:
+In order to deploy the kiosk by running the following command, we will need the Kubeconfig which we downloaded in the [Get mK8s Kubeconfig](#get-mk8s-kubeconfig) section in Pre-requisites. After getting the Kubeconfig, proceed to the CLI and run the following command to deploy the Kiosk:
 
 
 
@@ -700,7 +700,7 @@ Finally, open the **VIP Advertisement** menu and select **Internet** for VIP Adv
 ![alt text](assets/httplb-online-store-12.png)
  
 
-Distributed Cloud Services support automatic certificate generation and management. You can either `delegate your domain to Distributed Cloud Services <https://docs.cloud.f5.com/docs/how-to/app-networking/domain-delegation>`_ or add the CNAME record to your DNS records in case you do not delegate the domain to Distributed Cloud Services. See `Automatic Certificate Generation <https://docs.cloud.f5.com/docs/ves-concepts/load-balancing-and-proxy#automatic-certificate-generation>`_ for certificates managed by Distributed Cloud Services. See `Delegate Domain <https://docs.cloud.f5.com/docs/how-to/app-networking/domain-delegation>`_ for more information on how to delegate your domain to Distributed Cloud Services.
+Distributed Cloud Services support automatic certificate generation and management. You can either [delegate your domain to Distributed Cloud Services](https://docs.cloud.f5.com/docs/how-to/app-networking/domain-delegation) or add the CNAME record to your DNS records in case you do not delegate the domain to Distributed Cloud Services. See [Automatic Certificate Generation](https://docs.cloud.f5.com/docs/ves-concepts/load-balancing-and-proxy#automatic-certificate-generation) for certificates managed by Distributed Cloud Services. See [Delegate Domain](https://docs.cloud.f5.com/docs/how-to/app-networking/domain-delegation) for more information on how to delegate your domain to Distributed Cloud Services.
 
 If you don't use Delegated Domain, then open the menu of the created HTTP LB and proceed to **Manage Configuration**.
 
@@ -816,7 +816,7 @@ Finally, open the **VIP Advertisement** menu and select **Internet** for VIP Adv
 
 ![alt text](assets/httplb-deals-12.png)
 
-Use Delegated Domain or create required CNAME records like in the `Create HTTP LB for online store`_ section.
+Use Delegated Domain or create required CNAME records like in the [Create HTTP LB for online store](#create-http-lb-for-online-store) section.
 
 ![alt text](assets/httplb-deals-13.png)
 
