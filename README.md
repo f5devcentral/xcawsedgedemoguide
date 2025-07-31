@@ -122,8 +122,6 @@ From the **VoltConsole Access** menu, select the **Enable VoltConsole API Access
 
 ![alt text](assets/mk8s-create-3.png)
 
-TBD
-
 Finally, complete creating the K8s cluster by clicking **Add K8s Cluster**.
 
 ![alt text](assets/mk8s-create-4.png)
@@ -134,12 +132,11 @@ Let's start with creating an AWS VPC CE Site. Navigate to the **Site Management*
 
 ![alt text](assets/app-stack-aws-1.png)
 
-Enter a name and proceed to the labels. Type in **location** for the custom key and **app-stack-branch-a** for its value.
+Enter a name and proceed to the labels. Type in **location** for the custom key and **buytime-app-stack** for its value.
 
 ![alt text](assets/app-stack-aws-2.png)
 
-Next, we will configure site type. First, select your cloud credentials. Then enter your Azure resource group **app-stack-branch-a** for resources that will be created. Ensure that you enter a name for a non-existent resource group. With the **Recommended Azure Region Name** option selected by default, go on and select **centralus** for this demo.
-For a new Vnet choose **Autogenerate Vnet Name** and enter the **10.125.0.0/16** CIDR in the IPv4 CIDR block field.
+Next, we will configure site type. First, select your cloud credentials. Then pick your AWS Region. Fill in the **10.125.0.0/16** CIDR in the Primary IPv4 CIDR block field. In this step, we will create an app stack cluster. Open the Select Ingress Gateway or Ingress/Egress Gateway menu, and select **App Stack Cluster (One Interface)**. It will use single interface and be used for deploying K8s cluster. Move on to configure it.
 
 ![alt text](assets/app-stack-aws-3.png)
 
@@ -147,9 +144,7 @@ Click **Add Item** to add a node.
 
 ![alt text](assets/app-stack-aws-4.png)
 
-Select the **ca-central-1a** AWS availability zone. Please note that it must be consistent with the AWS Region selected earlier.
-For the **New Subnet** selected by default, enter the **10.125.10.0/24** subnet in the IPv4 Subnet field.
-Complete configuring the node by clicking the **Apply** button.
+Select the **ca-central-1a** AWS availability zone. Please note that it must be consistent with the AWS Region selected earlier. For the **New Subnet** selected by default, enter the **10.125.10.0/24** subnet in the IPv4 Subnet field. Complete configuring the node by clicking the **Apply** button.
 
 ![alt text](assets/app-stack-aws-5.png)
 
@@ -157,11 +152,7 @@ In the **Advanced Options** section, enable **Site Local K8s API access** and se
 
 ![alt text](assets/app-stack-aws-6.png)
 
-Back on the AWS VPC Site configuration page, navigate to the **Site Type Selection** section and select the **system/aws-creds** for automatic deployment.
-
-![alt text](assets/app-stack-aws-7.png)
-
-Next, we will paste the Public SSH key to access the site. Note that if you don't have a key, you can generate one using the "ssh-keygen" command and then display it with the command "cat ~/.ssh/id_rsa.pub".
+Back on the AWS VPC Site configuration page, we will paste the Public SSH key to access the site. Note that if you don't have a key, you can generate one using the "ssh-keygen" command and then display it with the command "cat ~/.ssh/id_rsa.pub".
 
 ![alt text](assets/ssh-key.png)
 
@@ -173,17 +164,17 @@ First, make sure that Node Local Service is **SSH**, then select **Site Local Ne
 
 ![alt text](assets/blocked-services-config.png)
 
-After that, take one more look at the configuration and complete it by clicking the **Add Azure VNET Site** button.
+After that, take one more look at the configuration and complete it by clicking the **Add AWS VPC Site** button.
 
 ![alt text](assets/saveandexit.png)
 
-The Status box for the VPC site object will display **Generated**. Click **Apply**. The Status field for the AWS VPC object changes to **Apply Planning**. Wait for the apply process to complete and the status to change to **Applied**.
+The Status box for the VPC site object will display **Validation Succeeded**. Click **Apply**. The Status field for the AWS VPC object changes to **Applying**. Wait for the apply process to complete and the status to change to **Applied**.
 
 ![alt text](assets/app-stack-aws-9.png)
 
 ## Get mK8s Kubeconfig
 
-Next, we will get the mK8s Kubeconfig. Navigate to the **Managed K8s** section in the left-side panel and proceed to **Overview**. The page will show the created managed K8s. Open its menu and select **Download Global Kubeconfig**.
+Next, we will get the mK8s Kubeconfig. Navigate to the **Managed K8s** section of the **Distributed Apps** service and proceed to **Overview**. The page will show the created managed K8s. Open its menu and select **Download Global Kubeconfig**.
 
 ![alt text](assets/mk8s-get-kubeconfig-1.png)
 
@@ -211,9 +202,7 @@ Enter a name and proceed to the labels. Type in **location** for the custom key 
 
 ![alt text](assets/ce-site-aws-2.png)
 
-Next, we will configure site type. First, select a region from the **AWS Region** drop-down menu. We'll use **ca-central-1** for this demo.
-With the **New VPC Parameters** selected by default, go on to create a new VPC. Select **Autogenerate VPC Name** and enter the **172.24.0.0/16** CIDR in the IPv4 CIDR block field.
-From the **Select Ingress Gateway or Ingress/Egress Gateway** menu, select the **Ingress/Egress Gateway (Two Interface)** option which is useful when the site is used as ingress/egress gateway to the VPC. Click **Configure** to open the two-interface node configuration.
+Next, we will configure site type. First, select your cloud credentials. Then pick your AWS Region. Fill in the **172.24.0.0/16** CIDR in the Primary IPv4 CIDR block field. Open the Select Ingress Gateway or Ingress/Egress Gateway menu, and select **Ingress/Egress Gateway (Two Interface)** which is useful when the site is used as ingress/egress gateway to the VPC. Click **Configure** to open the two-interface node configuration.
 
 ![alt text](assets/ce-site-aws-3.png)
 
@@ -232,19 +221,15 @@ Take a look at the node configuration and click the **Apply** button to proceed.
 
 ![alt text](assets/ce-site-aws-6.png)
 
-Back on the AWS VPC Site configuration page, navigate to the **Site Type Selection** section and select the **system/aws-creds** for automatic deployment.
-
-![alt text](assets/ce-site-aws-7.png)
-
-Next, we will paste the Public SSH key to access the site. Note that if you don't have a key, you can generate one using the "ssh-keygen" command and then display it with the command "cat ~/.ssh/id_rsa.pub".
+Back on the AWS VPC Site configuration page, we will paste the Public SSH key to access the site. Note that if you don't have a key, you can generate one using the "ssh-keygen" command and then display it with the command "cat ~/.ssh/id_rsa.pub".
 
 ![alt text](assets/ssh-key.png)
 
-Finally, take one more look at the configuration and complete it by clicking the **Save and Exit** button.
+Finally, take one more look at the configuration and complete it by clicking the **Add AWS VPC Site** button.
 
 ![alt text](assets/ce-site-aws-8.png)
 
-The Status box for the VPC site object will display **Generated**. Click **Apply**. The Status field for the AWS VPC object changes to **Apply Planning**. Wait for the apply process to complete and the status to change to **Applied**.
+The Status box for the VPC site object will display **Validation Succeeded**. Click **Apply**. The Status field for the AWS VPC object changes to **Applying**. Wait for the apply process to complete and the status to change to **Applied**.
 
 ![alt text](assets/ce-site-aws-9.png)
 
@@ -287,7 +272,7 @@ In the **Personal Management** section of the left Administration panel, select 
 
 ![alt text](assets/namespace-branch-a-1.png)
 
-Give namespace a name. Note that each namespace must have a unique name. Click the **Add Namespace** button. The new namespace displays in the list on your My Namespaces page.
+Give it a name. Note that each namespace must have a unique name. Click the **Add Namespace** button. The new namespace displays in the list on your My Namespaces page.
 
 ![alt text](assets/namespace-branch-a-2.png)
 
@@ -301,6 +286,8 @@ Open the Service menu and navigate to the **Multi-Cloud App Connect** service.
 In the **Application Namespaces** menu select the namespace we created in the previous step for the kiosk. Then navigate to the **Load Balancers** section in the left-side panel and select the **HTTP Load Balancers** option. Then click the **Add HTTP Load Balancer** button to open the creation form.
 
 ![alt text](assets/httplb-kiosk-1.png)
+
+TBD
 
 In the **Name** field, enter a name for the new load balancer.
 
