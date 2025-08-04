@@ -38,11 +38,7 @@
 
 # Objective
 
-This guide, along with the provided scripts and sample app & services, is designed to help explore and demonstrate the capabilities of the F5 Distributed Cloud Platform through the lens of two key strategic solution areas:
-
-- **Hybrid Multicloud App Delivery**: Seamlessly deploying app components across cloud, branch, and edge
-
-- **Application Modernization**: Orchestrating modern app stacks using App Stack and edge compute nodes.
+This guide, along with the provided scripts and sample app & services, is designed to help explore and demonstrate the capabilities of the F5 Distributed Cloud Platform through the lens of the key strategic solution area - **Hybrid Multicloud App Delivery** for seamlessly deploying app components across cloud, branch, and edge.
 
 The outlined use-cases focus on F5 Distributed Cloud App Stack, Multi-Cloud Networking (MCN) and Edge Compute services configured using AWS VPC site.
 
@@ -690,8 +686,6 @@ Let's now assign the created RE & CE sites to the virtual K8s. Open the Service 
 
 ![alt text](assets/vk8s-assign-sites-0.png)
 
-TBD
-
 Navigate to **Virtual K8s** in the left-side panel and click **Select Virtual Sites**.
 
 ![alt text](assets/vk8s-assign-sites-1.png)
@@ -734,7 +728,7 @@ In the **Name** field, enter a name for the new load balancer.
 
 ![alt text](assets/httplb-deals-2.png)
 
-Then proceed to the **Domains and LB Type** section and fill in the **deals.online-store.f5-cloud-demo.com** domain. Next, from the **Load Balancer Type** drop-down menu, select **HTTPS with Automatic Certificate** and enable HTTP redirecting to HTTPS and adding HSTS header by checking the boxes off.
+Then proceed to the **Domains and LB Type** section and fill in the **deals.online-store.f5-cloud-demo.com** domain. Make sure **HTTPS with Automatic Certificate** is specified. Next, enable HTTP redirecting to HTTPS and adding HSTS header by checking the boxes off.
 
 ![alt text](assets/httplb-deals-3.png)
 
@@ -758,19 +752,15 @@ First, from the **Select Type of Origin Server** menu, select **K8s Service Name
 
 ![alt text](assets/httplb-deals-8.png)
 
-Back on the Origin Pool page, type in the **8080** Origin server Port.
+Back on the Origin Pool page, type in the **8080** Origin server Port. Then scroll down and click **Add Origin Pool** to move on to apply the origin pool configuration.
 
 ![alt text](assets/httplb-deals-9.png)
-
-Scroll down and click **Continue** to move on to apply the origin pool configuration.
-
-![alt text](assets/httplb-deals-10.png)
 
 Click the **Apply** button to apply the origin pool configuration to the HTTP Load Balancer.
 
 ![alt text](assets/httplb-deals-11.png)
 
-Finally, open the **VIP Advertisement** menu and select **Internet** for VIP Advertisement, which will advertise this load balancer on public network with default VIP. Complete creating the load balancer by clicking the **Save and Exit** button.
+Finally, make sure **Internet** is specified for **VIP Advertisement**, which will advertise this load balancer on public network with default VIP. Complete creating the load balancer by clicking the **Add HTTP Load Balancer** button.
 
 ![alt text](assets/httplb-deals-12.png)
 
@@ -794,6 +784,6 @@ And finally, let's go to the site and test the deployed Lightning deals module. 
 
 # Wrap-Up
 
-At this stage, you should have deployed a WooCommerce sample app which is representative of a traditional 3-tier app architecture: backend + database + frontend. The F5 Distributed Cloud Services provided easy deployment and secure networking of these app services to realize a distributed app model, spanning across: CE public cloud, Retail Branch (AppStack on a private cloud), an RE. Our fictitious retailer BuyTime is set up to use xC AppStack and has a consistent deployment topology for an in-store Kiosk shopping experience. This topology can run in multiple Retail Branches with identical configuration, management, and security policy applied.
+At this stage, you should have deployed a WooCommerce sample app which is representative of a traditional 3-tier app architecture: backend + database + frontend. F5 Distributed Cloud Services provided **Hybrid Multicloud App Delivery** solution for easy deployment and secure networking of these app services to realize a distributed app model, spanning across: CE public cloud, Retail Branch (App Stack on a private cloud), an RE. Our fictitious retailer BuyTime is set up to use Distributed Cloud Services App Stack and has a consistent deployment topology for an in-store Kiosk shopping experience. This topology can run in multiple Retail Branches with identical configuration, management, and security policy applied.
 
-We hope you have a better understanding of the F5 Distributed Cloud platform (xC) capabilities and are now ready to implement them for your own organization. Should you have any issues or questions, please feel free to raise them via GitHub. Thank you!
+We hope you have a better understanding of the F5 Distributed Cloud Platform capabilities and are now ready to implement them for your own organization. Should you have any issues or questions, please feel free to raise them via GitHub. Thank you!
