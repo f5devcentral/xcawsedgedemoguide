@@ -1,4 +1,4 @@
-# F5 Edge Compute for Multicloud Apps Using AWS VPC Site
+# F5 Edge Compute and Enterprise Networking with F5 Distributed Cloud Services (using Amazon AWS)
 
 # Table of Contents
 
@@ -38,11 +38,9 @@
 
 # Objective
 
-This guide, along with the provided scripts and sample app & services, is designed to help explore and demonstrate the capabilities of the F5 Distributed Cloud Platform through the lens of the key strategic solution area - **Hybrid Multicloud App Delivery** for seamlessly deploying app components across cloud, branch, and edge.
+This guide, along with the provided scripts and sample app & services, is designed to help explore and demonstrate the use-cases of F5 Distributed Cloud Services through the lens of the key strategic solution area -- **Hybrid Multicloud App Delivery** for seamlessly deploying app components across clouds, branch, and edge. The below guide focuses on Amazon AWS-specific deployments and configurations of *Edge Compute* with F5 Distributed Cloud AppStack and *Multi-Cloud Networking (MCN)* with F5 Distributed Cloud App Connect.
 
-The outlined use-cases focus on F5 Distributed Cloud App Stack, Multi-Cloud Networking (MCN) and Edge Compute services configured using AWS VPC site.
-
-You can use the included scripts to deploy the WooCommerce sample app, which represents a traditional 3-tier app architecture (backend + database + frontend). With F5 Distributed Cloud Services, you can easily deploy and securely network these app services to create a distributed app model that spans across:
+You can use the steps and the included scripts to deploy the WooCommerce sample app, which represents a traditional 3-tier app architecture (backend + database + frontend). With F5 Distributed Cloud Services, you can easily deploy and securely network these app services to create a distributed app model that spans across:
 
 - Customer Edge (CE) public cloud
 
