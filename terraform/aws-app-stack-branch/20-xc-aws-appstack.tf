@@ -50,7 +50,6 @@ resource "volterra_aws_vpc_site" "appstack" {
     aws_certified_hw = "aws-byol-voltstack-combo"
 	  az_nodes {
 	  	aws_az_name = "${var.aws_region}a"
-	  	disk_size   = 100
       local_subnet {
         existing_subnet_id = element(aws_subnet.subnet_a.*.id, 0)
       }
